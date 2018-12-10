@@ -17,6 +17,8 @@ export interface ISPLists {
 }
 
 export interface ISPList{
+  ShowOnSlider: Boolean;
+  SliderImage: any;
 }
 
 export interface INewsSliderWebPartProps {
@@ -46,9 +48,17 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
 
   private _renderList(items: ISPList[]): void {
     let html: string = ``;
+    let image: any;
     items.forEach((item: ISPList) => {
+      if(item.ShowOnSlider !== true){
+        return;
+      }else{
+        image = item.SliderImage.Url;
+        console.log(image);
+      }
       html += ` 
-      <p>testing</p>
+      <p>here's an image</p>
+      <img src="${image}"/>
       `
     });
     const listContainer: Element = this.domElement.querySelector('#spListContainer');  
