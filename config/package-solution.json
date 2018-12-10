@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "news-slider-client-side-solution",
+    "id": "d23c0b99-351f-4229-907c-b9988987f451",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true
+  },
+  "paths": {
+    "zippedPackage": "solution/news-slider.sppkg"
+  }
+}

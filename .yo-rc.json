@@ -1,0 +1,11 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "isCreatingSolution": true,
+    "environment": "spo",
+    "version": "1.6.0",
+    "libraryName": "news-slider",
+    "libraryId": "d23c0b99-351f-4229-907c-b9988987f451",
+    "packageManager": "npm",
+    "componentType": "webpart"
+  }
+}
