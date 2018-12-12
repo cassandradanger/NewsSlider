@@ -19,6 +19,7 @@ export interface ISPLists {
 export interface ISPList{
   ShowOnSlider: Boolean;
   SliderImage: any;
+  Title: String;
 }
 
 export interface INewsSliderWebPartProps {
@@ -29,9 +30,10 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
 
   public render(): void {
     this.domElement.innerHTML = `
-    <div class=${styles.mainNS}>
-       TESTING
+    <div class=${styles.headerNS}>
+       News & Announcements
        <div id="spListContainer" /></div>
+       <div id="buttons" /></div>
     </div>`;
       this._firstGetList();
   }
@@ -48,23 +50,43 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
 
   private _renderList(items: ISPList[]): void {
     let html: string = ``;
-    let image: any;
+    let buttons: string = ``;
+    let objectArray: Array<any> = [];
+    let buttonNumber = 0;
+    let imageNumber = 0;
     items.forEach((item: ISPList) => {
       if(item.ShowOnSlider !== true){
         return;
       }else{
-        image = item.SliderImage.Url;
-        console.log(image);
+        buttonNumber = buttonNumber + 1;
+        let newObject = {
+          'title': item.Title,
+          'url': item.SliderImage.Url
+        };
+        objectArray.push(newObject);
       }
-      html += ` 
-      <p>here's an image</p>
-      <img src="${image}"/>
+      buttons += `
+      <button id="myButton_${buttonNumber}" value=${buttonNumber} class=${styles.buttonNS}">${buttonNumber}</button>
       `
     });
+    html += `
+    <img class=${styles.imageNS} src="${objectArray[imageNumber].url}"/>
+    <p class=${styles.titleNS}>${objectArray[imageNumber].title}</p>
+    `
     const listContainer: Element = this.domElement.querySelector('#spListContainer');  
-    listContainer.innerHTML = html;
+    listContainer.innerHTML = html + buttons;
+    for (let j = 1; j < objectArray.length +1; ++j) {
+      var elem = document.getElementById('myButton_' + j);
+      elem.addEventListener('click', function() {
+        imageNumber = j-1;
+          console.log('id: ' + j);
+      });
+    }
   };
 
+  // private updateBtnNum(){
+  //   console.log('check');
+  // }
   protected get dataVersion(): Version {
     return Version.parse('1.0');
   }

@@ -2,57 +2,23 @@
 .mainNS{
   width: 300px;
 }
-.titleNS{
-  color: green;
+.headerNS{
+  color: #57b372;
   font-size: 13pt;
   font-weight: 600;
   margin-bottom: -10px;
-  text-align: center;
 }
-.contentNS{
-  padding: 10px 10px 10px 20px;
-  border: 2px solid green;
-  border-radius: 5px;
-  width: 300px;
-  height: 65px;
-  line-height: 10px;
-  overflow: auto;
-  word-wrap: none;
-}
-.svgNS{
-  margin-bottom: -12px;
-}
-.imgNS{
-  height: 60px;
-  width: 60px;
-  border-radius: 50px;
-}
-.liNS{
-  margin-bottom: 15px;
-  list-style: none;
-}
-.personWrapperNS{
-  display: inline-block;
+.titleNS{
+  color: #57b372;
+  z-index:1;
+  margin-top: -100px;
 }
 .imageNS{
-  border: 1px solid black;
-  border-radius: 50px;
-  height: 60px;
-  width: 60px;
-  margin-right: 10px;
-  display: inline-block;
-  vertical-align: top;
+  z-index: 2;
+  width: 700px;
+  border: 2px solid #57b372;
+  border-radius: 5px;
 }
-.nameNS{
-  font-weight: 600;
-  font-size: 12pt;
-}
-.positionNS{
-  font-size: 9pt;
-  margin-bottom: 17px;
-  margin-top: 8px;
-}
-.reasonNS{
-  font-size: 9pt;
-  font-style: italic;
+.buttonNS{
+  z-index: 1;
 }
