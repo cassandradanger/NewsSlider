@@ -1,4 +1,6 @@
-
+body{
+  font-family: 'Trefoil sans'
+}
 .mainNS{
   width: 300px;
 }
@@ -9,16 +11,42 @@
   margin-bottom: -10px;
 }
 .titleNS{
-  color: #57b372;
+  font-size: 14pt;
+  font-weight: bold;
+  color: #fff;
   z-index:1;
-  margin-top: -100px;
+  text-align: right;
+  margin-top: -70px;
+  margin-right: 50px;
+  margin-left: 50px;
+  width: 630px;
+  overflow: auto;
+  white-space: nowrap;
 }
 .imageNS{
-  z-index: 2;
+  z-index: 1;
   width: 700px;
   border: 2px solid #57b372;
   border-radius: 5px;
 }
-.buttonNS{
-  z-index: 1;
+@mixin button-style {
+  background-color: #57b372;
+  border: 1px solid #57b372;
+  height: 30px;
+  width: 30px;
+  font-size: 14pt;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+}
+button {
+  @include button-style;
+}
+
+.buttonsWrap{
+  z-index: 2;
+  display: block;
+  position: absolute;
+  bottom: -22px;
+  right: 60px;
 }

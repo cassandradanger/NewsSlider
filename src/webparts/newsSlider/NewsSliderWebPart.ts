@@ -32,8 +32,8 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
     this.domElement.innerHTML = `
     <div class=${styles.headerNS}>
        News & Announcements
+       <div id="buttons" / class=${styles.buttonsWrap}></div>
        <div id="spListContainer" /></div>
-       <div id="buttons" /></div>
     </div>`;
       this._firstGetList();
   }
@@ -66,7 +66,7 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
         objectArray.push(newObject);
       }
       buttons += `
-      <button id="myButton_${buttonNumber}" value=${buttonNumber} class=${styles.buttonNS}">${buttonNumber}</button>
+      <button id="myButton_${buttonNumber}">${buttonNumber}</button>
       `
     });
     html += `
@@ -74,7 +74,11 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
     <p class=${styles.titleNS}>${objectArray[imageNumber].title}</p>
     `
     const listContainer: Element = this.domElement.querySelector('#spListContainer');  
-    listContainer.innerHTML = html + buttons;
+    listContainer.innerHTML = html;
+
+    const listContainer2: Element = this.domElement.querySelector('#buttons');  
+    listContainer2.innerHTML = buttons;
+
     for (let j = 1; j < objectArray.length +1; ++j) {
       var elem = document.getElementById('myButton_' + j);
       elem.addEventListener('click', function() {
