@@ -31,6 +31,7 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
   public render(): void {
     this.domElement.innerHTML = `
     <div class=${styles.headerNS}>
+    <p class=${styles.announceNS}></p>
        News & Announcements
        <div id="buttons" / class=${styles.buttonsWrap}></div>
        <div id="spListContainer" /></div>
