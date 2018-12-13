@@ -69,6 +69,19 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
       buttons += `
       <button id="myButton_${buttonNumber}">${buttonNumber}</button>
       `
+      const listContainer2: Element = this.domElement.querySelector('#buttons');  
+      listContainer2.innerHTML = buttons;
+      for (let j = 1; j < objectArray.length +1; ++j) {
+        var elem = document.getElementById('myButton_' + j);
+        elem.addEventListener('click', function() {
+          imageNumber = j-1;
+            html = `
+              <img class=${styles.imageNS} src="${objectArray[imageNumber].url}"/>
+              <p class=${styles.titleNS}>${objectArray[imageNumber].title}</p>
+            `
+            listContainer.innerHTML = html;
+        });
+      }
     });
     html += `
     <img class=${styles.imageNS} src="${objectArray[imageNumber].url}"/>
@@ -76,22 +89,8 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
     `
     const listContainer: Element = this.domElement.querySelector('#spListContainer');  
     listContainer.innerHTML = html;
-
-    const listContainer2: Element = this.domElement.querySelector('#buttons');  
-    listContainer2.innerHTML = buttons;
-
-    for (let j = 1; j < objectArray.length +1; ++j) {
-      var elem = document.getElementById('myButton_' + j);
-      elem.addEventListener('click', function() {
-        imageNumber = j-1;
-          console.log('id: ' + j);
-      });
-    }
   };
 
-  // private updateBtnNum(){
-  //   console.log('check');
-  // }
   protected get dataVersion(): Version {
     return Version.parse('1.0');
   }
