@@ -71,6 +71,9 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
       `
       const listContainer2: Element = this.domElement.querySelector('#buttons');  
       listContainer2.innerHTML = buttons;
+
+      setTimeout(function() { document.getElementById('myButton_1').focus(); },100);
+
       for (let j = 1; j < objectArray.length +1; ++j) {
         var elem = document.getElementById('myButton_' + j);
         elem.addEventListener('click', function() {
@@ -83,6 +86,7 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
         });
       }
     });
+    
     html += `
     <img class=${styles.imageNS} src="${objectArray[imageNumber].url}"/>
     <p class=${styles.titleNS}>${objectArray[imageNumber].title}</p>

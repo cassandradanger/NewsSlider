@@ -43,8 +43,8 @@ body{
 }
 
 @mixin button-style {
-  background-color: #57b372;
-  border: 1px solid #57b372;
+  background-color: #8ccb9d;
+  border: 1px solid #8ccb9d;
   height: 30px;
   width: 30px;
   font-size: 14pt;
@@ -52,10 +52,18 @@ body{
   color: #fff;
   cursor: pointer;
 }
+
+@mixin button-style-focus {
+  background-color: #57b372;
+  border: 1px solid #57b372;
+}
 button {
   @include button-style;
 }
 
+button:focus{
+  @include button-style-focus;
+}
 .buttonsWrap{
   z-index: 2;
   display: block;
