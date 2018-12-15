@@ -83,6 +83,7 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
               <img class=${styles.imageNS} src="${objectArray[imageNumber].url}"/>
               <p class=${styles.titleNS}>${objectArray[imageNumber].title}</p>
             `
+            const listContainer: Element = document.querySelector('#spListContainer');  
             listContainer.innerHTML = html;
         });
       }
