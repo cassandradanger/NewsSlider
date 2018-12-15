@@ -20,6 +20,7 @@ export interface ISPList{
   ShowOnSlider: Boolean;
   SliderImage: any;
   Title: String;
+  Id: any;
 }
 
 export interface INewsSliderWebPartProps {
@@ -43,7 +44,6 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
       `/_api/web/Lists/GetByTitle('Stories, News, & Announcements')/Items?)`, SPHttpClient.configurations.v1)
       .then((response)=>{
         response.json().then((data)=>{
-          console.log('this is data', data);
           this._renderList(data.value)
         })
       });
@@ -62,7 +62,8 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
         buttonNumber = buttonNumber + 1;
         let newObject = {
           'title': item.Title,
-          'url': item.SliderImage.Url
+          'url': item.SliderImage.Url,
+          'id': item.Id,
         };
         objectArray.push(newObject);
       }
@@ -89,7 +90,11 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
     
     html += `
     <img class=${styles.imageNS} src="${objectArray[imageNumber].url}"/>
-    <p class=${styles.titleNS}>${objectArray[imageNumber].title}</p>
+      <a href="https://girlscoutsrv.sharepoint.com/Lists/Announcements/DispForm.aspx?ID=${objectArray[imageNumber].id}&Source=https%3A%2F%2Fgirlscoutsrv%2Esharepoint%2Ecom">
+      <p class=${styles.titleNS}>  
+      ${objectArray[imageNumber].title}
+      </p>
+      </a>
     `
     const listContainer: Element = this.domElement.querySelector('#spListContainer');  
     listContainer.innerHTML = html;

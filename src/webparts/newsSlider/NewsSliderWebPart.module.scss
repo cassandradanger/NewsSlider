@@ -4,6 +4,12 @@ body{
 .mainNS{
   width: 300px;
 }
+a{
+  text-decoration: none;
+}
+a :hover{
+  color:#ddd
+}
 .headerNS{
   color: #57b372;
   font-size: 13pt;
@@ -57,7 +63,7 @@ body{
   background-color: #57b372;
   border: 1px solid #57b372;
 }
-button {
+.buttonsWrap button {
   @include button-style;
 }
 
@@ -69,5 +75,5 @@ button:focus{
   display: block;
   position: absolute;
   bottom: -13px;
-  right: 60px;
+  right: -40px;
 }
