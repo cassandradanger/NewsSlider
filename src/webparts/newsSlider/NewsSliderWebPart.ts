@@ -68,7 +68,7 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
         objectArray.push(newObject);
       }
       buttons += `
-      <button id="myButton_${buttonNumber}">${buttonNumber}</button>
+      <button id="myButton_${buttonNumber}" class=${styles.buttonStyle}>${buttonNumber}</button>
       `
       const listContainer2: Element = this.domElement.querySelector('#buttons');  
       listContainer2.innerHTML = buttons;
