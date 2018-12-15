@@ -77,7 +77,8 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
 
       for (let j = 1; j < objectArray.length +1; ++j) {
         var elem = document.getElementById('myButton_' + j);
-        elem.addEventListener('click', function() {
+        elem.addEventListener('click', function(e) {
+          e.preventDefault();
           imageNumber = j-1;
             html = `
               <img class=${styles.imageNS} src="${objectArray[imageNumber].url}"/>
