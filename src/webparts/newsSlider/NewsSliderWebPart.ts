@@ -82,7 +82,11 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
           imageNumber = j-1;
             html = `
               <img class=${styles.imageNS} src="${objectArray[imageNumber].url}"/>
-              <p class=${styles.titleNS}>${objectArray[imageNumber].title}</p>
+              <a target=”_blank” href="https://girlscoutsrv.sharepoint.com/Lists/Announcements/DispForm.aspx?ID=${objectArray[imageNumber].id}&Source=https%3A%2F%2Fgirlscoutsrv%2Esharepoint%2Ecom">
+                <p class=${styles.titleNS}>  
+                  ${objectArray[imageNumber].title}
+                </p>
+              </a>
             `
             const listContainer: Element = document.querySelector('#spListContainer');  
             listContainer.innerHTML = html;
@@ -92,10 +96,10 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
     
     html += `
     <img class=${styles.imageNS} src="${objectArray[imageNumber].url}"/>
-      <a href="https://girlscoutsrv.sharepoint.com/Lists/Announcements/DispForm.aspx?ID=${objectArray[imageNumber].id}&Source=https%3A%2F%2Fgirlscoutsrv%2Esharepoint%2Ecom">
-      <p class=${styles.titleNS}>  
-      ${objectArray[imageNumber].title}
-      </p>
+      <a target=”_blank” href="https://girlscoutsrv.sharepoint.com/Lists/Announcements/DispForm.aspx?ID=${objectArray[imageNumber].id}&Source=https%3A%2F%2Fgirlscoutsrv%2Esharepoint%2Ecom">
+        <p class=${styles.titleNS}>  
+          ${objectArray[imageNumber].title}
+        </p>
       </a>
     `
     const listContainer: Element = this.domElement.querySelector('#spListContainer');  
