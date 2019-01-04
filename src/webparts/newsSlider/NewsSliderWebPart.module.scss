@@ -9,7 +9,8 @@ a{
   text-decoration: none;
 }
 a :hover{
-  color:#ddd
+  color:#ddd;
+  border-bottom: 1px solid transparent !important;
 }
 .headerNS{
   color: #57b372;
@@ -17,26 +18,29 @@ a :hover{
   font-weight: bold;
 }
 .titleNS{
+  background-color: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  right: 35px;
   font-size: 14pt;
   font-weight: bold;
   color: #fff;
   z-index:1;
   text-align: right;
   margin: 0 !important;
-  margin-top: -70px !important;
-  margin-right: 50px !important;
-  margin-left: 50px !important;
-  width: 630px;
+  margin-top: -75px !important;
+  max-width: 630px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding: 0 10px;
+  border-radius: 4px;
 }
 .imageNS{
   z-index: 1;
-  width: 700px;
-  height: 200px;
-  border: 2px solid #57b372;
-  border-radius: 5px;
+  width: 780px;
+  height: 220px;
+  border: 1px solid #57b372;
+  border-radius: 15px;
   margin-top: 12px;
 }
 
@@ -64,15 +68,15 @@ a :hover{
   cursor: pointer;
 }
 
-.buttonStyle :focus {
-  background-color: #57b372;
-  border: 1px solid #57b372;
+.buttonStyle:active, .buttonStyle:focus, .buttonStyle:hover {
+  background-color: #57b372 !important;
+  border: 1px solid #57b372 !important;
 }
 
 .buttonsWrap{
   z-index: 2;
   display: block;
   position: absolute;
-  bottom: -37px;
-  right: 112px;
+  bottom: 5px;
+  right: 35px;
 }
