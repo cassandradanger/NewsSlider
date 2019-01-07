@@ -18,9 +18,7 @@ a :hover{
   font-weight: bold;
 }
 .titleNS{
-  background-color: rgba(255, 255, 255, 0.2);
-  position: absolute;
-  right: 35px;
+  position: relative;
   font-size: 14pt;
   font-weight: bold;
   color: #fff;
@@ -28,7 +26,7 @@ a :hover{
   text-align: right;
   margin: 0 !important;
   margin-top: -75px !important;
-  max-width: 630px;
+  max-width: 745px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -42,6 +40,7 @@ a :hover{
   border: 1px solid #57b372;
   border-radius: 15px;
   margin-top: 12px;
+  position: relative;
 }
 
 .announceNS{
@@ -77,6 +76,6 @@ a :hover{
   z-index: 2;
   display: block;
   position: absolute;
-  bottom: 5px;
-  right: 35px;
+  margin-top: 204px;
+  padding-left: 625px;
 }
